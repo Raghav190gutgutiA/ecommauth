@@ -1,5 +1,4 @@
-
 function wel(name: string) {
-	console.log(name)
+  console.log(name);
 }
 wel("hi");

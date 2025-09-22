@@ -1,4 +1,7 @@
 function wel(name: string) {
-  console.log(name);
+    const user = {
+        name: "1",
+    };
+    console.log(name + user.name);
 }
 wel("hi");

@@ -1,44 +1,55 @@
 {
-  "name": "auth-service",
-  "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/Raghav190gutgutiA/ecommauth#readme",
-  "bugs": {
-    "url": "https://github.com/Raghav190gutgutiA/ecommauth/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Raghav190gutgutiA/ecommauth.git"
-  },
-  "license": "ISC",
-  "author": "raghav",
-  "type": "'",
-  "main": "index.js",
-  "scripts": {
-    "format": "prettier . --write",
-    "format:chech": "prettier . --check",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "dev": "node src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@types/node": "^24.5.2",
-    "eslint": "^9.36.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.6",
-    "prettier": "3.6.2",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.0"
-  },
-  
-  "lint-staged": {
+    "name": "auth-service",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/Raghav190gutgutiA/ecommauth#readme",
+    "bugs": {
+        "url": "https://github.com/Raghav190gutgutiA/ecommauth/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Raghav190gutgutiA/ecommauth.git"
+    },
+    "license": "ISC",
+    "author": "raghav",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier . --write",
+        "format:chech": "prettier . --check",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "dev": "nodemon --watch src --ext ts,json --exec \"node --loader ts-node/esm src/server.ts\"",
+        "test": "jest --watch --runInBand",
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.36.0",
+        "@types/express": "^5.0.3",
+        "@types/jest": "^30.0.0",
+        "@types/node": "^24.5.2",
+        "@types/supertest": "^6.0.3",
+        "@types/winston": "^2.4.4",
+        "eslint": "^9.36.0",
+        "husky": "^9.1.7",
+        "jest": "^30.2.0",
+        "lint-staged": "^16.1.6",
+        "nodemon": "^3.1.10",
+        "prettier": "3.6.2",
+        "supertest": "^7.1.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.44.0"
+    },
+    "lint-staged": {
         "*.ts": [
             "npm run lint:fix",
             "npm run format"
         ]
+    },
+    "dependencies": {
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0",
+        "winston": "^3.17.0"
     }
-
 }

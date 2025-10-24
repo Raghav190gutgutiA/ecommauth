@@ -2,18 +2,14 @@
     // Visit https://aka.ms/tsconfig to read more about this file
     "compilerOptions": {
         // File Layout
-        "rootDir": "./src",
+        "rootDir": ".",
         "outDir": "./dist",
 
         // Environment Settings
-        // See also https://aka.ms/tsconfig/module
-        "module": "nodenext",
-        "target": "esnext",
-        "types": [],
-        // For nodejs:
-        // "lib": ["esnext"],
-        // "types": ["node"],
-        // and npm install -D @types/node
+        "module": "NodeNext",
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
+        "types": ["node", "jest"],
 
         // Other Outputs
         "sourceMap": true,
@@ -24,14 +20,6 @@
         "noUncheckedIndexedAccess": true,
         "exactOptionalPropertyTypes": true,
 
-        // Style Options
-        // "noImplicitReturns": true,
-        // "noImplicitOverride": true,
-        // "noUnusedLocals": true,
-        // "noUnusedParameters": true,
-        // "noFallthroughCasesInSwitch": true,
-        // "noPropertyAccessFromIndexSignature": true,
-
         // Recommended Options
         "strict": true,
         "jsx": "react-jsx",
@@ -39,6 +27,12 @@
         "isolatedModules": true,
         "noUncheckedSideEffectImports": true,
         "moduleDetection": "force",
-        "skipLibCheck": true
-    }
+        "skipLibCheck": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+
+    // 👇 Key Fix: Tell TS what to include/exclude
+    "include": ["src", "tests"],
+    "exclude": ["node_modules", "dist"]
 }

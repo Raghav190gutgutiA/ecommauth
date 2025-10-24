@@ -32,7 +32,7 @@ export default defineConfig(
             "dist",
             "node_modules",
             "eslint.config.mjs",
-            "jest.config.js",
+            "jest.config.cjs",
         ],
     },
 );
